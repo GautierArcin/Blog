@@ -4,7 +4,11 @@ const siteMetadata = {
     fr: 'Blog de Gautier Arcin | Ingénieur FullStack & Robotique',
   },
   author: 'Gautier Arcin',
-  headerTitle: { en: 'Gautier Arcin', fr: 'Gautier Arcin' },
+  headerTitle: { en: "Gautier Arcin's Blog", fr: 'Blog de Gautier Arcin' },
+  occupation: {
+    en: 'Robotics & Fullstack engineer',
+    fr: 'Ingénieur FullStack & Robotique',
+  },
   // description: 'A blog created with Next.js and Tailwind.css',
   description: { en: "Gautier Arcin's personnal blog ", fr: 'Blog personnel de Gautier Arcin' },
   language: 'en',

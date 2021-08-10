@@ -25,12 +25,12 @@ export default function Projects({ locale, availableLocales }) {
             {t('projects:title')}
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {t('projects:subtitle')}
+            {/* {t('projects:subtitle')} */}
           </p>
         </div>
         <div className="container py-12">
           <div className="flex flex-wrap -m-4">
-            {projectsData[locale]?.map((d) => (
+            {/* {projectsData[locale]?.map((d) => (
               <Card
                 key={d.title}
                 title={d.title}
@@ -38,7 +38,8 @@ export default function Projects({ locale, availableLocales }) {
                 imgSrc={d.imgSrc}
                 href={d.href}
               />
-            ))}
+            ))} */}
+            {t('common:construction')}
           </div>
         </div>
       </div>
