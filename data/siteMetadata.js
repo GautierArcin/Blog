@@ -1,27 +1,30 @@
 const siteMetadata = {
-  title: { en: 'Next.js Starter Blog', fr: 'Starter de blog NextJs' },
-  author: 'Tails Azimuth',
-  headerTitle: { en: 'TailwindBlog', fr: 'blog Tailwind' },
+  title: {
+    en: "Gautier Arcin's Blog | Robotics & Fullstack engineer",
+    fr: 'Blog de Gautier Arcin | Ingénieur FullStack & Robotique',
+  },
+  author: 'Gautier Arcin',
+  headerTitle: { en: 'Gautier Arcin', fr: 'Gautier Arcin' },
   // description: 'A blog created with Next.js and Tailwind.css',
-  description: { en: 'en description', fr: 'Description en fr' },
-  language: 'en-us',
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
-  siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
+  description: { en: "Gautier Arcin's personnal blog ", fr: 'Blog personnel de Gautier Arcin' },
+  language: 'en',
+  siteUrl: 'https://www.gautierarcin.com',
+  siteRepo: 'https://github.com/GautierArcin/Blog',
   siteLogo: '/static/images/logo.png',
-  image: '/static/images/avatar.png',
+  image: '/static/images/avatarResized.png',
   socialBanner: '/static/images/twitter-card.png',
-  email: 'address@yoursite.com',
-  github: 'https://github.com',
+  email: 'gautierarcin@gmail.com',
+  github: 'https://github.com/GautierArcin',
   twitter: 'https://twitter.com/Twitter',
   facebook: 'https://facebook.com',
   youtube: 'https://youtube.com',
   linkedin: 'https://www.linkedin.com',
-  locale: 'en-US',
+  locale: 'en',
   analytics: {
     // supports plausible, simpleAnalytics or googleAnalytics
     plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
     simpleAnalytics: false, // true or false
-    googleAnalyticsId: '', // e.g. UA-000000-2 or G-XXXXXXX
+    googleAnalyticsId: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS, // e.g. UA-000000-2 or G-XXXXXXX
   },
   comment: {
     // Select a provider and use the environment variables associated to it
