@@ -7,6 +7,10 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      strokeWidth: {
+        21: '21',
+        15: '15',
+      },
       spacing: {
         '9/16': '56.25%',
       },
@@ -20,7 +24,7 @@ module.exports = {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: colors.teal,
+        primary: colors.red,
         gray: colors.trueGray,
         code: {
           green: '#b5f4a5',
@@ -30,6 +34,14 @@ module.exports = {
           blue: '#93ddfd',
           white: '#fff',
         },
+        // test1: '#E0EAFC',
+        // test2: '#CFDEF3',
+        // bgBegin: '#06b6d4',
+        // begEnd: '#06b6d4',
+        darkBgBegin: '#5F0A69',
+        darkBgEnd: '#1C1917',
+        // darkBgBegin: '#06b6d4',
+        // darkBgEnd: '#06b6d4',
       },
       typography: (theme) => ({
         DEFAULT: {

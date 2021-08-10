@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/no-onchange */
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
-import Logo from '@/data/logo.svg'
+// import Logo from '@/data/logo.svg'
+import Logo from '@/components/Logo'
 import Link from './Link'
 import SectionContainer from './SectionContainer'
 import Footer from './Footer'
@@ -18,7 +19,10 @@ const LayoutWrapper = ({ children }) => {
 
   const changeLanguage = (e) => {
     const locale = e.target.value
-    router.push(router.asPath, router.asPath, { locale })
+
+    router.asPath.includes('/tags')
+      ? router.push('/tags/', '/tags/', { locale })
+      : router.push(router.asPath, router.asPath, { locale })
   }
 
   return (
@@ -29,7 +33,14 @@ const LayoutWrapper = ({ children }) => {
             <Link href="/" aria-label="Tailwind CSS Blog">
               <div className="flex items-center justify-between">
                 <div className="mr-3">
-                  <Logo />
+                  <Logo
+                    className1={
+                      'fill-current stroke-current text-gray-900 dark:text-gray-100 stroke-15  ease-in-out duration-700 '
+                    }
+                    className2={
+                      'fill-current stroke-current text-gray-500  dark:text-gray-400 stroke-15  ease-in-out duration-700 '
+                    }
+                  />
                 </div>
                 {typeof siteMetadata.headerTitle === 'string' ? (
                   <div className="hidden h-6 text-2xl font-semibold sm:block">
