@@ -9,7 +9,7 @@
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/GautierArcin/i18n-tailwind-nextjs-starter-blog/tree/demo/next-translate)
 
-Unofficial i18n fork of the excellent [Tailwind CSS blogging starter template](https://github.com/timlrx/tailwind-nextjs-starter-blog) implementing sub-path i18n routing & `next-translate`. 
+Unofficial i18n fork of the excellent [Tailwind CSS blogging starter template](https://github.com/timlrx/tailwind-nextjs-starter-blog) implementing sub-path i18n routing & `next-translate`.
 I try to maintin it as up to date as possible with main repo.
 
 Check out the documentation below to get started (or on main repo) to get started.
@@ -25,98 +25,43 @@ Using the template? Feel free to create a PR and add your blog to this list.
 
 ## Motivation
 
-I wanted found  [Tailwind CSS blogging starter template](https://github.com/timlrx/tailwind-nextjs-starter-blog) and was quite happy with it. Only problem is that it didn't supported multiple langages and I wanted to create a blog in both english and french. 
+I wanted found [Tailwind CSS blogging starter template](https://github.com/timlrx/tailwind-nextjs-starter-blog) and was quite happy with it. Only problem is that it didn't supported multiple languages and I wanted to create a blog in both English and French.
 
 ## Features
 
 All of the main repo Features &
+
 - Sub-path routing with locale(s)
+
 - Multi-langage post support
+
 - Optimized & flexible multi-locale SEO
 
-## Quick Start Guide 
+## Quick Start Guide
 
 Please follow [main repo](https://github.com/timlrx/tailwind-nextjs-starter-blog)'s' **Quick Start Guide** section for general instructions. This section will only cover what to do to add your own(s) locale(s) to the site.
 
+This repository is furnished with `en` as defaultLocale and with `fr` as additional locale. You can provide as many locales as you want, you'll just add the corresponding translation.
 
+If you add a new translations in `locales` folder, please PR this repo. That might help next users / forks.
 
-1. JS (official support) - `npx degit https://github.com/timlrx/tailwind-nextjs-starter-blog.git` or TS (community support) - `npx degit timlrx/tailwind-nextjs-starter-blog#typescript`
-2. Personalize `siteMetadata.js` (site related information)
-3. Personalize `authors/default.md` (main author)
-4. Modify `projectsData.js`
-5. Modify `headerNavLinks.js` to customize navigation links
-6. Add blog posts
-7. Deploy on Vercel
-
-
-## Extend / Customize
-
-`data/siteMetadata.js` - contains most of the site related information which should be modified for a user's need.
-
-`data/authors/default.md` - default author information (required). Additional authors can be added as files in `data/authors`.
-
-`data/projectsData.js` - data used to generate styled card in projects page.
-
-`data/headerNavLinks.js` - navigation links.
-
-`data/logo.svg` - replace with your own logo.
-
-`data/blog` - replace with your own blog posts.
-
-`public/static` - store assets such as images and favicons.
-
-`tailwind.config.js` and `css/tailwind.css` - contain the tailwind stylesheet which can be modified to change the overall look and feel of the site.
-
-`components/social-icons` - to add other icons, simply copy an svg file from [Simple Icons](https://simpleicons.org/) and map them in `index.js`. Other icons uses [heroicons](https://heroicons.com/).
-
-`components/MDXComponents.js` - pass your own JSX code or React component by specifying it over here. You can then call them directly in the `.mdx` or `.md` file. By default, a custom link and image component is passed.
-
-`layouts` - main templates used in pages.
-
-`pages` - pages to route to. Read the [Next.js documentation](https://nextjs.org/docs) for more information
+1. Checkout the `demo/next-translate` branch on this repo. `Master` is kept up to date with [`timlrx/tailwind-nextjs-starter-blog`](https://github.com/timlrx/tailwind-nextjs-starter-blog)
+2. Add your own locales and default locale in `i18n.json`
+3. Add a folder for every locale in the `locales` folder.
+4. For each `.json` files (`404.json`, `common.json`, `headerNavLink.json`, ...) in your `/locales/[locale]` folder, provide a translation
+5. Complete `data/siteMetadata.js`, adding the localized version for certain field (like `title` or `description`, for example.)
+6. Complete the localization of `data/projectData.js`
+7. Voilà ! You're done !
 
 ## Post
 
-### Frontmatter
+To have localized version for post, please follow this naming convention:
 
-Frontmatter follows [Hugo's standards](https://gohugo.io/content-management/front-matter/).
+`myPost.md` : default locale
 
-Currently 7 fields are supported.
+`myPost.[locale].md`: additional locales
 
-```
-title (required)
-date (required)
-tags (required, can be empty array)
-lastmod (optional)
-draft (optional)
-summary (optional)
-images (optional, if none provided defaults to socialBanner in siteMetadata config)
-authors (optional list which should correspond to the file names in `data/authors`. Uses `default` if none is specified)
-layout (optional list which should correspond to the file names in `data/layouts`)
-```
-
-Here's an example of a post's frontmatter:
-
-```
----
-title: 'Introducing Tailwind Nexjs Starter Blog'
-date: '2021-01-12'
-lastmod: '2021-01-18'
-tags: ['next-js', 'tailwind', 'guide']
-draft: false
-summary: 'Looking for a performant, out of the box template, with all the best in web technology to support your blogging needs? Checkout the Tailwind Nextjs Starter Blog template.'
-images: ['/static/images/canada/mountains.jpg', '/static/images/canada/toronto.jpg']
-authors: ['default', 'sparrowhawk']
-layout: PostLayout
----
-```
-
-### Compose
-
-Run `node ./scripts/compose.js` to bootstrap a new post.
-
-Follow the interactive prompt to generate a post with pre-filled front matter.
-
+Post can be provided in only one locale (that doesn't need to be defaultLocale).
 
 ## Support
 
