@@ -1,6 +1,6 @@
 import SocialIcon from '@/components/social-icons'
 import Image from '@/components/Image'
-import { PageSeo } from '@/components/SEO'
+import { PageSEO } from '@/components/SEO'
 
 import useTranslation from 'next-translate/useTranslation'
 
@@ -10,9 +10,9 @@ export default function AuthorLayout({ children, frontMatter, availableLocales }
 
   return (
     <>
-      <PageSeo
-        title={`About - ${name}`}
-        description={`About me - ${name}`}
+      <PageSEO
+        title={`${t('headerNavLinks:about')} - ${name}`}
+        description={`${t('SEO:about')} - ${name}`}
         availableLocales={availableLocales}
       />
       <div className="divide-y">

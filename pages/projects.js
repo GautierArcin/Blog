@@ -1,9 +1,7 @@
 import siteMetadata from '@/data/siteMetadata'
 import projectsData from '@/data/projectsData'
-import Image from '@/components/Image'
-import Link from '@/components/Link'
 import Card from '@/components/Card'
-import { PageSeo } from '@/components/SEO'
+import { PageSEO } from '@/components/SEO'
 import useTranslation from 'next-translate/useTranslation'
 
 export async function getStaticProps({ locale, locales }) {
@@ -14,8 +12,8 @@ export default function Projects({ locale, availableLocales }) {
   const { t } = useTranslation()
   return (
     <>
-      <PageSeo
-        title={`Projects - ${siteMetadata.author}`}
+      <PageSEO
+        title={`${t('headerNavLinks:projects')} - ${siteMetadata.author}`}
         description={siteMetadata.description[locale]}
         availableLocales={availableLocales}
       />
