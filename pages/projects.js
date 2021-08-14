@@ -6,7 +6,7 @@ import Card from '@/components/Card'
 import { PageSeo } from '@/components/SEO'
 import useTranslation from 'next-translate/useTranslation'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 
 export async function getStaticProps({ locale, locales }) {
   return { props: { locale, availableLocales: locales } }
@@ -16,15 +16,16 @@ export default function Projects({ locale, availableLocales }) {
   const { t } = useTranslation()
   const [filter, setFilter] = useState('')
 
-  // const listeFilter = ['Personnels', 'Professionnels', 'Publication']
-  const listeFilter = projectsData[locale].reduce(
-    (acc, e) => (acc.includes(e.tag) ? acc : [...acc, e.tag]),
-    []
+  const listeFilter = useMemo(
+    () =>
+      projectsData[locale].reduce((acc, e) => (acc.includes(e.tag) ? acc : [...acc, e.tag]), []),
+    [locale]
   )
 
   useEffect(() => {
-    console.log(filter)
-  }, [filter])
+    // console.log(filter)
+    setFilter('')
+  }, [locale])
 
   console.log(projectsData)
   return (
@@ -42,13 +43,14 @@ export default function Projects({ locale, availableLocales }) {
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             {t('projects:subtitle')}
           </p>
-          <div className="space-x-4 > * + *">
+          {/* <div className="space-x-4 > * + *"> */}
+          <div className="flex flex-wrap justify-start -my-1 -mx-3">
             {listeFilter.map((e) => (
               <button
                 key={e}
                 className={`${
                   filter === e ? 'ring-2 dark:ring-2 ring-gray-900 dark:ring-white' : ''
-                } bg-primary-500  hover:bg-primary-600  dark:hover:bg-primary-400 text-white font-bold py-2 px-4 rounded`}
+                } bg-primary-500 my-1 mx-3 hover:bg-primary-600  dark:hover:bg-primary-400 text-white font-bold py-2 px-4 rounded`}
                 name={e}
                 onClick={() => setFilter(filter === e ? '' : e)}
               >
