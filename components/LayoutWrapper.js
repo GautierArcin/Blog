@@ -35,10 +35,10 @@ const LayoutWrapper = ({ children }) => {
                 <div className="mr-3">
                   <Logo
                     className1={
-                      'fill-current stroke-current text-primary-500 dark:text-primary-600 stroke-15  ease-in-out duration-700 '
+                      'fill-current stroke-current text-primary-500 dark:text-primary-600 hover:text-primary-600 dark:hover:text-primary-400 stroke-15  ease-in-out duration-500 '
                     }
                     className2={
-                      'fill-current stroke-current text-gray-500  dark:text-gray-600 stroke-15  ease-in-out duration-700 '
+                      'fill-current stroke-current text-gray-500  dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400 stroke-15  ease-in-out duration-500 '
                     }
                   />
                 </div>
