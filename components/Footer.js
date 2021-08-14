@@ -24,6 +24,9 @@ export default function Footer() {
           <div className="whitespace-nowrap">{siteMetadata.occupation[locale]}</div>
         </div>
         <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
+          <Link href="https://github.com/GautierArcin/i18n-tailwind-nextjs-starter-blog">
+            I18n fork of&nbsp;
+          </Link>
           <Link href="https://github.com/timlrx/tailwind-nextjs-starter-blog">
             Tailwind Nextjs Theme
           </Link>
