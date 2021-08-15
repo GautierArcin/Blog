@@ -15,9 +15,9 @@ const projectsData = {
       href: 'https://unsent-letters.netlify.app/',
     },
     {
-      title: 'Masque Majora imprimé en 3d',
+      title: "3D printed Majora's Mask",
       category: 'Personnals',
-      description: `3D printed Majora's Mask. Contains a rapsberry pi and 110 leds. Projects still under development.`,
+      description: `Contains a rapsberry pi and 110 leds. Projects still under development.`,
       imgSrc: '/static/images/projects/masque.png',
       href: 'https://www.youtube.com/watch?v=GI0pV_6trdk/',
     },
@@ -64,7 +64,7 @@ const projectsData = {
     {
       title: 'Masque Majora imprimé en 3d',
       category: 'Personnels',
-      description: `Masque majora imprimé en 3D. Contient un rapsberry pi ainsi que 110 leds. Projets toujours en cours de développement.`,
+      description: `Contient un rapsberry pi ainsi que 110 leds. Projets toujours en cours de développement.`,
       imgSrc: '/static/images/projects/masque.png',
       href: 'https://www.youtube.com/watch?v=GI0pV_6trdk/',
     },
