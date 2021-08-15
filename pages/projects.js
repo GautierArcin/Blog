@@ -18,7 +18,10 @@ export default function Projects({ locale, availableLocales }) {
 
   const listeFilter = useMemo(
     () =>
-      projectsData[locale].reduce((acc, e) => (acc.includes(e.tag) ? acc : [...acc, e.tag]), []),
+      projectsData[locale].reduce(
+        (acc, e) => (acc.includes(e.category) ? acc : [...acc, e.category]),
+        []
+      ),
     [locale]
   )
 
@@ -62,7 +65,7 @@ export default function Projects({ locale, availableLocales }) {
         <div className="container py-6">
           <div className="flex flex-wrap -m-4">
             {projectsData[locale]
-              ?.filter((e) => e.tag.includes(filter))
+              ?.filter((e) => e.category.includes(filter))
               .map((d, i) => (
                 <Card
                   key={d.title + i}

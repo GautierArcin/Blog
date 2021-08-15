@@ -2,7 +2,7 @@ const projectsData = {
   en: [
     {
       title: 'A Search Engine',
-      tag: 'Personals',
+      category: 'Personals',
       description: `What if you could look up any information in the world? Webpages, images, videos
       and more. Google has many features to help you find exactly what you're looking
       for.`,
@@ -11,7 +11,7 @@ const projectsData = {
     },
     {
       title: 'The Time Machine',
-      tag: 'Professionals',
+      category: 'Professionals',
       description: `Imagine being able to travel back in time or to the future. Simple turn the knob
       to the desired date and press "Go". No more worrying about lost keys or
       forgotten handphones with this simple yet affordable solution.`,
@@ -21,7 +21,7 @@ const projectsData = {
     {
       title:
         'Torque-based methodology and experimental implementation for industrial robot standby pose optimization',
-      tag: 'Paper',
+      category: 'Paper',
       description: `Co-author of this paper.
       
       This manuscript reports on a novel methodology and experimental implementation for industrial robot standby pose optimization.`,
@@ -32,31 +32,48 @@ const projectsData = {
   ],
   fr: [
     {
-      title: 'Un moteur de recherche',
-      tag: 'Personnels',
-      description: `Et si vous pouviez rechercher n'importe quelle information dans le monde ? Pages web, images, vidéos
-      et bien d'autres choses encore. Google propose de nombreuses fonctionnalités pour vous aider à trouver exactement ce que vous recherchez.
-      pour.`,
-      imgSrc: '/static/images/google.png',
-      href: 'https://www.google.com',
+      title: 'Application intelligibilité',
+      category: 'Professionnels',
+      description: `MVP d'une application, basée react-native et ayant pour cible matérielle un ipad mini, pour la mesure et le suivi de l'intelligibilité de patients atteints de cancer ORL. Le but est de permettre aux ORL de Toulouse d'avoir un outil de suvi et diagnostique supplémentaire basé sur l'IA (et les travaux de Vicent Roger).`,
+      imgSrc: '/static/images/projects/MPV_intel.png',
+      href: 'https://github.com/GautierArcin/appliAudioCap/tree/develop',
     },
     {
-      title: 'La machine à remonter le temps',
-      tag: 'Professionnels',
-      description: `Imaginez que vous puissiez voyager dans le passé ou dans le futur. Il suffit de tourner le bouton
-      sur la date souhaitée et d'appuyer sur "Go". Plus besoin de se soucier des clés perdues ou des téléphones portables oubliés avec cette solution simple et abordable.
-      ou de téléphones portables oubliés grâce à cette solution simple et abordable.`,
-      imgSrc: '/static/images/time-machine.jpg',
-      href: '/blog/the-time-machine',
+      title: 'Unsent letters',
+      category: 'Personnels',
+      description: `Premier site que j'ai réalisé. Affiche une lettre aléatoire anonyme (depuis www.reddit.com/r/unsentletters) comme si elle était tapée en direct.`,
+      imgSrc: '/static/images/projects/unsent_letters2.png',
+      href: 'https://unsent-letters.netlify.app/',
     },
     {
-      title: 'La machine à remonter le temps',
-      tag: 'Publication',
-      description: `Imaginez que vous puissiez voyager dans le passé ou dans le futur. Il suffit de tourner le bouton
-      sur la date souhaitée et d'appuyer sur "Go". Plus besoin de se soucier des clés perdues ou des téléphones portables oubliés avec cette solution simple et abordable.
-      ou de téléphones portables oubliés grâce à cette solution simple et abordable.`,
-      imgSrc: '/static/images/time-machine.jpg',
-      href: '/blog/the-time-machine',
+      title: 'Masque Majora imprimé en 3d',
+      category: 'Personnels',
+      description: `Masque majora imprimé en 3D. Contient un rapsberry pi ainsi que 110 leds. Projets toujours en cours de développement.`,
+      imgSrc: '/static/images/projects/masque.png',
+      href: 'https://www.youtube.com/watch?v=GI0pV_6trdk/',
+    },
+    {
+      title: 'I18n fork du starter Tailwind Nextjs Theme',
+      category: 'Personnels',
+      description: `Fork de l'excellent starter Tailwind Nextjs de  timlrx, implémentant la localisation via next-translate. Ce blog est basé sur ce fork.`,
+      imgSrc: '/static/images/projects/tailwind-i18n.png',
+      href: 'https://unsent-letters.netlify.app/',
+    },
+    {
+      title: 'Path-planner PRM',
+      category: 'Personnels',
+      description: `Path-planner PRM en python pour robots type turtlebot. Complétement compatible ROS 1 & configurable via rosconfig.`,
+      imgSrc: '/static/images/projects/prm.gif',
+      href: 'https://github.com/GautierArcin/Jetbrain_path',
+    },
+    {
+      title:
+        'Torque-based methodology and experimental implementation for industrial robot standby pose optimization',
+      category: 'Publication',
+      description: `Co-auteur de ce papier. Abstract: This manuscript reports on a novel methodology and experimental implementation for industrial robot standby pose optimization.`,
+      imgSrc: '/static/images/projects/springer.png',
+      href:
+        'https://www.springerprofessional.de/en/torque-based-methodology-and-experimental-implementation-for-ind/18513446',
     },
   ],
 }
