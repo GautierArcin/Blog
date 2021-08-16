@@ -1,24 +1,27 @@
 import Link from '@/components/Link'
-import { PageSeo } from '@/components/SEO'
+import { PageSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllTags } from '@/lib/tags'
 import kebabCase from '@/lib/utils/kebabCase'
 
+import useTranslation from 'next-translate/useTranslation'
+
 export async function getStaticProps({ defaultLocale, locale, locales }) {
   const otherLocale = locale !== defaultLocale ? locale : ''
   const tags = await getAllTags('blog', otherLocale)
 
-  return { props: { tags, availableLocales: locales } }
+  return { props: { tags, locale, availableLocales: locales } }
 }
 
-export default function Tags({ tags, availableLocales }) {
+export default function Tags({ tags, locale, availableLocales }) {
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
+  const { t } = useTranslation()
   return (
     <>
-      <PageSeo
-        title={`Tags - ${siteMetadata.author}`}
-        description="Things I blog about"
+      <PageSEO
+        title={`${t('headerNavLinks:tags')} - ${siteMetadata.author}`}
+        description={t('SEO:tags')}
         availableLocales={availableLocales}
       />
       <div className="flex flex-col items-start justify-start divide-y divide-gray-200 dark:divide-gray-700 md:justify-center md:items-center md:divide-y-0 md:flex-row md:space-x-6 md:mt-24">

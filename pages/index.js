@@ -1,5 +1,5 @@
 import Link from '@/components/Link'
-import { PageSeo } from '@/components/SEO'
+import { PageSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
@@ -20,7 +20,7 @@ export default function Home({ posts, locale, availableLocales }) {
 
   return (
     <>
-      <PageSeo
+      <PageSEO
         title={siteMetadata.title[locale]}
         description={siteMetadata.description[locale]}
         availableLocales={availableLocales}
