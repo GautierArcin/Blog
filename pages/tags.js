@@ -20,7 +20,7 @@ export default function Tags({ tags, locale, availableLocales }) {
   return (
     <>
       <PageSEO
-        title={`${t('headerNavLink:tags')} - ${siteMetadata.author}`}
+        title={`${t('headerNavLinks:tags')} - ${siteMetadata.author}`}
         description={t('SEO:tags')}
         availableLocales={availableLocales}
       />
