@@ -19,7 +19,7 @@ const projectsData = {
       category: 'Personnals',
       description: `Contains a rapsberry pi and 110 leds. Projects still under development.`,
       imgSrc: '/static/images/projects/masque.png',
-      href: 'https://www.youtube.com/watch?v=GI0pV_6trdk/',
+      href: 'https://youtu.be/1FCYDp2KgUk',
     },
     {
       title: 'I18n fork du starter Tailwind Nextjs Theme',
@@ -66,7 +66,7 @@ const projectsData = {
       category: 'Personnels',
       description: `Contient un rapsberry pi ainsi que 110 leds. Projets toujours en cours de développement.`,
       imgSrc: '/static/images/projects/masque.png',
-      href: 'https://www.youtube.com/watch?v=GI0pV_6trdk/',
+      href: 'https://youtu.be/1FCYDp2KgUk',
     },
     {
       title: 'I18n fork du starter Tailwind Nextjs Theme',
