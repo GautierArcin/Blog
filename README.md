@@ -1,4 +1,4 @@
-![tailwind-nextjs-banner](/public/static/images/twitter-card.png)
+![tailwind-nextjs-banner](/public/static/images/tailwind-i18n.png)
 
 # I18n fork of Tailwind Nextjs Starter Blog
 
