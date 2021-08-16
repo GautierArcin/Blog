@@ -1,11 +1,11 @@
-import { PageSeo } from '@/components/SEO'
+import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import ListLayout from '@/layouts/ListLayout'
 import { POSTS_PER_PAGE } from '../../blog'
 
 import useTranslation from 'next-translate/useTranslation'
-import { createPortal } from 'react-dom'
+
 export async function getStaticPaths({ locales, defaultLocale }) {
   const paths = (
     await Promise.all(
@@ -83,7 +83,7 @@ export default function PostPage({
   const { t } = useTranslation()
   return (
     <>
-      <PageSeo
+      <PageSEO
         title={siteMetadata.title[locale]}
         description={siteMetadata.description[locale]}
         availableLocales={availableLocales}
