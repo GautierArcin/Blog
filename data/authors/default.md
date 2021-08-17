@@ -17,4 +17,4 @@ This site is a showcase for all my projects, professional but also personal. The
 
 I am always open to new opportunities.
 
-For more information, you can visit [my Linkedin profile](https://www.linkedin.com/in/gautierarcin/) or [download my resume](www.gautierarcin.com/static/cv/Gautier_Arcin_cv_en.pdf).
+For more information, you can visit [my Linkedin profile](https://www.linkedin.com/in/gautierarcin/) or [download my resume](/static/cv/Gautier_Arcin_cv_en.pdf).

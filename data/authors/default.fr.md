@@ -16,4 +16,4 @@ Ce site fait office de vitrine pour tous mes projets, professionnels mais aussi 
 
 Je suis toujours à l'écoute de nouvelles opportunités.
 
-Pour plus d'informations, vous pouvez visiter [mon profil Linkedin](https://www.linkedin.com/in/gautierarcin/) ou [télécharger mon cv](www.gautierarcin.com/static/cv/Gautier_Arcin_cv_fr.pdf).
+Pour plus d'informations, vous pouvez visiter [mon profil Linkedin](https://www.linkedin.com/in/gautierarcin/) ou [télécharger mon cv](/static/cv/Gautier_Arcin_cv_fr.pdf).
