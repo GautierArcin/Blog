@@ -5,7 +5,7 @@ const projectsData = {
       category: 'Professionals',
       description: `MVP of an application, based on react-native and having as hardware target an ipad mini, for the measurement and monitoring of the intelligibility of ENT cancer patients. The goal is to allow ENT specialists in Toulouse to have an additional monitoring and diagnostic tool based on AI (and the work of Vincent Roger).`,
       imgSrc: '/static/images/projects/intel.png',
-      href: 'https://github.com/GautierArcin/appliAudioCap/tree/develop',
+      href: 'https://github.com/GautierArcin/Intell-io',
     },
     {
       title: 'Unsent Letters',
@@ -52,7 +52,7 @@ const projectsData = {
       description: `MVP d'une application, basée react-native et ayant pour cible matérielle un ipad mini, pour la mesure et le suivi de l'intelligibilité de patients atteints de cancer ORL. 
       Le but est de permettre aux ORL de Toulouse d'avoir un outil de suvi et diagnostique supplémentaire basé sur l'IA (et les travaux de Vincent Roger).`,
       imgSrc: '/static/images/projects/intel.png',
-      href: 'https://github.com/GautierArcin/appliAudioCap/tree/develop',
+      href: 'https://github.com/GautierArcin/Intell-io',
     },
     {
       title: 'Unsent Letters',
