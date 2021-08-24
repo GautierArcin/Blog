@@ -1,0 +1,123 @@
+---
+title: "Créer de l'art grâce au deep learning"
+date: 2021-24-14T20:30:14Z
+tags: ['Tech', 'Art', 'Deep Learning']
+draft: false
+images: ['/static/images/articles/deep-learning-art/berni.png']
+summary: "Comment créer des l'art incroyable grâce au deep learning (que vous pourriez potentiellement vendre sous forme de NFT)"
+layout: PostSimple
+---
+
+En naviguant sans but sur Internet, je suis tombé sur un subreddit nommé [/r/DeepDream](https://www.reddit.com/r/deepdream/).
+
+Ce subreddit a pour objectif de montrer (et promouvoir) l'art généré par Deep Learning. Les résultats sont souvent inattendus, parfois bizarres, mais toujours intéressants.
+
+<br/>
+<div style={{textAlign:"center"}}>
+
+![Bernie Sanders dessiné](/static/images/articles/deep-learning-art/berni.png)
+
+[Sketched Bernie Sanders](https://www.reddit.com/r/deepdream/comments/l36mbp/ran_a_bunch_of_bernies_through_different_styles/) par [u/GusRuss89](https://www.reddit.com/user/GusRuss89)
+
+</div>
+<br/>
+
+<br />
+
+<div style={{textAlign:"center"}}>
+
+![Journey](/static/images/articles/deep-learning-art/Journey.gif)
+
+[Journey](https://www.reddit.com/r/deepdream/comments/p0pzmh/journey_vqganclip/) par [u/2CB_Education](https://www.reddit.com/user/2CB_Education)
+
+</div>
+<br/>
+
+Cet article se concentre sur le VQGAN+CLIP, un algorithme text-to-image capable de générer des œuvres d'art étonnantes avec seulement quelques instructions et ajustements.
+
+# Les mains dans le cambouis
+
+La plupart du travail peut être effectué par le biais de Google Collab, vous n'aurez donc pas besoin d'une carte graphique dédiéesur votre pc. Vous aurez cependant besoin d'un espace disque conséquence sur votre drive google.
+
+L'utilisation de Google Collab est gratuite, mais vous n'aurez pas un accès prioritaire aux GPU.
+
+Vous pouvez trouver le premier collab utilisé [à ce lien](https://colab.research.google.com/drive/1_4Jl0a7WIJeqy5LTjPJfZOwMZopG5C-W?usp=sharing#scrollTo=ZdlpRFL8UAlW).
+
+## 1. Changer le miroir hébergeant les différents modèles
+
+Depuis le 24 octobre 2021, le miroir hébergeant les différents modèles (`http://mirror.io.community/`) est hors ligne.
+
+Vous aurez besoin de faire une copie du Collab sur votre propre drive, et changer quelques lignes dans les sections `Selection of models to download`. Ci-dessous le mien, où j'ai mis le lien correct pour les deux `image_net` :
+
+```python
+if imagenet_1024:
+  !curl -L -o vqgan_imagenet_f16_1024.ckpt -C - 'https://heibox.uni-heidelberg.de/f/140747ba53464f49b476/?dl=1'
+  !curl -L -o vqgan_imagenet_f16_1024.yaml -C - 'https://heibox.uni-heidelberg.de/f/6ecf2af6c658432c8298/?dl=1'
+if imagenet_16384:
+  !curl -L -o vqgan_imagenet_f16_16384.ckpt -C - 'https://heibox.uni-heidelberg.de/f/867b05fc8c4841768640/?dl=1'
+  !curl -L -o vqgan_imagenet_f16_16384.yaml -C - 'https://heibox.uni-heidelberg.de/f/274fb24ed38341bfa753/?dl=1'
+
+```
+
+Des informations additionnelles [peuvent être trouvées ici](https://www.reddit.com/r/bigsleep/comments/p96pnh/a_site_that_hosts_some_vqgan_models_isnt_working/).
+
+## 2. Utiliser les modèles
+
+Un tutoriel très détaillé sur la façon d'utiliser le modèle peut être trouvé[ici] (https://tuscriaturas.miraheze.org/wiki/Ayuda:Crear_im%C3%A1genes_con_VQGAN+CLIP). En outre, si vous n'êtes pas inspiré, voici [une liste très intéressante de combinaisons de mots-clés](https://imgur.com/a/SnSIQRu).
+
+Veuillez faire attention en choisissant le modèle que vous allez utiliser. Certains sont adaptés à une utilisation commerciale (aka NFT), tandis que d'autres, comme `imagenet`, ne le sont pas.
+
+Pour un premier essai, j'ai décidé d'utiliser l'image suivante comme **image initiale**. C'est une photo de l'appartement d'un ami :
+
+ <div style={{textAlign:"center"}}>
+
+![Initial Image](/static/images/articles/deep-learning-art/initialImage.png)
+
+_Mon ami a un appartement plutôt cool_
+
+</div>
+
+Un premier essai naïf a été d'utiliser l'invite `sketch` sur l'image initiale, avec le modèle `sflckr`.
+
+ <div style={{textAlign:"center"}}>
+
+![sketch image](/static/images/articles/deep-learning-art/sketch.gif)
+
+_Ça ne s'est pas déroulé comme prévu_
+
+</div>
+Le résultat du premier essai était un peu... Étrange.  Il s'est transformé en ce que l'on pourrait appeler une esquisse. Malheureusement, l'image initiale fournie n'était (évidemment) pas adaptée.
+
+Après un peu d'ajustement, et en utilisant le modèle `imagenet_16384`, avec une invite combinée `"living room:60| voxel:30| 4K:10"` (ce qui signifie : faire une image composée de 60% d'un salon, 30% de voxel et 10% de 4k).
+
+ <div style={{textAlign:"center"}}>
+
+![sketch image](/static/images/articles/deep-learning-art/living_room_voxel.gif)
+
+_Ça s'est mieux passé_
+
+</div>
+<br/>
+
+Certains artefacts sont encore visibles (notamment autour des plantes) mais le résultat est bien meilleur.
+
+## 3. Pour aller plus loin
+
+Les images précédentes servent à rendre des images statiques (comme le dessin de Bernie). Mais pour rendre quelque chose comme le second gif (Journey) nous devons utiliser un collab `Zooming VQGAN + Clip`. L'idée principale derrière est d'utiliser une version zoomée de la dernière itération pour la prochaine itération lors du rendu, ceci afin d'avoir un effet de _zoom continu_.
+
+Un avantage supplémentaire est que vous pouvez utiliser des inputs horodatées. On peut alors faire des compositions comme celle-ci :
+
+<div style={{textAlign:"center"}}>
+
+![Ascension](/static/images/articles/deep-learning-art/Ascension.gif)
+
+[Ascension](https://www.reddit.com/r/deepdream/comments/p0my2e/ascension_zoom_vqgancliprife/) by [u/ascendedhand](https://www.reddit.com/user/ascendedhand)
+
+</div>
+<br/>
+
+# Ressources supplémentaires (en anglais)
+
+- [VQGAN+CLIP — How does it work?](https://alexasteinbruck.medium.com/vqgan-clip-how-does-it-work-210a5dca5e52)
+- [Introduction to VQGAN+CLIP](https://sourceful.us/doc/935/introduction-to-vqganclip)
+- [Combinaison of keyword](https://imgur.com/a/SnSIQRu) (Le lien figure déjà dans l'article mais... sérieusement, jettez-y un coup d'oeil !)
