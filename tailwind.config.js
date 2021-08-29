@@ -14,6 +14,11 @@ module.exports = {
       spacing: {
         '9/16': '56.25%',
       },
+
+      transitionDuration: {
+        0: '0ms',
+        2000: '2000ms',
+      },
       lineHeight: {
         11: '2.75rem',
         12: '3rem',

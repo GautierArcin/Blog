@@ -2,7 +2,6 @@ const fs = require('fs')
 const globby = require('globby')
 const path = require('path')
 const prettier = require('prettier')
-const { cpuUsage } = require('process')
 const siteMetadata = require('../data/siteMetadata')
 const i18nConfig = require('../i18n.json')
 
