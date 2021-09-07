@@ -1,14 +1,13 @@
 ---
-title: "Git quickstart's guide "
+title: 'Git explained to my mom'
 date: 2021-09-02T22:30:14Z
-tags: ['Guide', 'Git', 'versioning']
+tags: ['Guide', 'Git', 'Version control']
 draft: true
-images: ['/static/images/articles/deep-learning-art/berni.png']
-summary: 'How you might be able to create trippy deep learning art (you might use to sell NFT)'
+images: ['/static/images/articles/git-quickstart/git-logo.svg.png']
+summary: 'A comprehensive introduction to the bread & butter of software developer: Git'
 layout: PostSimple
 ---
 
-{' '}
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.96 114.01">
   <path
     className="fill-current text-grey-500 dark:text-grey-100 hover:text-primary-600 dark:hover:text-primary-500 stroke-15  ease-in-out duration-300 "
@@ -28,115 +27,34 @@ layout: PostSimple
   />
 </svg>
 
-The entire purpose of the subreddit is to promote some machine-learning generated art. The results are a bit unexpected and trippy, but always interesting.
+<div style={{ textAlign: 'center' }}>*I took way too much time to make that hover animation*</div>
 
 <br />
 
-<div style={{textAlign:"center"}}>
+<TOCInline toc={props.toc} asDisclosure />
 
-![Sketched Bernie Sanders](/static/images/articles/deep-learning-art/berni.png)
+## Introduction
 
-[Sketched Bernie Sanders](https://www.reddit.com/r/deepdream/comments/l36mbp/ran_a_bunch_of_bernies_through_different_styles/) by [u/GusRuss89](https://www.reddit.com/user/GusRuss89)
+Imagine a gigantic book of thousands of pages. A fiction for example.
 
-</div>
-<br/>
+You are multiples writer writing to book, and, for some reason, two of you decide to change things in the same chapter. You want to modify the name of the hero from **_James_** to **_John_** while your colleague thinks that it is better that the hero has a **_Porsche_** instead of a **_Lamborghini_**. You both finish at the same time. Problem is that, now, **both you have a different version** of the chapter (yours with **_John_** as the hero, his with a **Lamborghini**), but still, both can be considered **_up⁻to-date_**.
 
-<br />
+Imagine that a third colleague (that nobody likes, for good reasons) realizes that he **_deleted_** half of a chapter two months ago. Problem is that, your realize that **you don't have a backup old enough to contain that chapter**. Guess you'll have to write it again (_thanks again, Andrew !_).
 
-<div style={{textAlign:"center"}}>
+Now, imagine that, instead of having multiple versions of the book (that are just copy of the same file, but at different points in time), **you could track the changes you did in the book**:
 
-![Journey](/static/images/articles/deep-learning-art/Journey.gif)
+- It would be then very easy to **_merge_** your version of the chapter and the version of your colleague's version (since what both of you did was replacing a word by another, or deleting a word and adding a word).
+- It would be also easy to **_rollback_** the mistake of that silly, (silly), Andrew (since you're tracking all change, you would also be able to pinpoint the exact point of time Andrew deleted half that chapter and undo his changes).
 
-[Journey](https://www.reddit.com/r/deepdream/comments/p0pzmh/journey_vqganclip/) by [u/2CB_Education](https://www.reddit.com/user/2CB_Education)
+Software developpement is akin to writing a book. Instead of writing a book, you're writing source code with multiple others software developers. Therefore, the same problematics arises. **Git is one response for these problems**.
 
-</div>
-<br/>
+## Git
 
-Now, this article is going to focus on the VQGAN+CLIP, a text-to-image algorithm capable of generating astonishing art with only a few prompts and tweaking.
+Git is what we call an **open source** **control system**.
 
-# Getting our hands dirty
+- **Open source** means that the source code of git is accessible by everyone. It means you can see precisely how it works from the inside (and contribute to its change, if you want). [You can actually check it out here](https://github.com/git/git).
+- **Control system** means that the main purpose of git is to **track change of a set of files** over time.
 
-Most of the work can be done through some Google Collab, so you won't need a dedicated GPU on your own computer. You'll also need some space on your google drive, to host the different models you'll have to download.
+## History of git
 
-Using google collab is free, though you won't have priority access to the GPU.
-
-You can find the first collab used [at this link](https://colab.research.google.com/drive/1_4Jl0a7WIJeqy5LTjPJfZOwMZopG5C-W?usp=sharing#scrollTo=ZdlpRFL8UAlW).
-
-## 1. Changing the site hosting the different models
-
-As of october 24th 2021, the site hosting different models (`http://mirror.io.community/`) is down.
-
-You'll need to copy the collab on your own google drive, and change some line in the `Selection of models to download` sections. Here is mine, where I put the correct link for both `image_net`:
-
-```python
-if imagenet_1024:
-  !curl -L -o vqgan_imagenet_f16_1024.ckpt -C - 'https://heibox.uni-heidelberg.de/f/140747ba53464f49b476/?dl=1'
-  !curl -L -o vqgan_imagenet_f16_1024.yaml -C - 'https://heibox.uni-heidelberg.de/f/6ecf2af6c658432c8298/?dl=1'
-if imagenet_16384:
-  !curl -L -o vqgan_imagenet_f16_16384.ckpt -C - 'https://heibox.uni-heidelberg.de/f/867b05fc8c4841768640/?dl=1'
-  !curl -L -o vqgan_imagenet_f16_16384.yaml -C - 'https://heibox.uni-heidelberg.de/f/274fb24ed38341bfa753/?dl=1'
-
-```
-
-Additional informations [can be found here](https://www.reddit.com/r/bigsleep/comments/p96pnh/a_site_that_hosts_some_vqgan_models_isnt_working/).
-
-## 2. Using the models
-
-A very detailed tutorial on how to use the model can be found [here](https://tuscriaturas.miraheze.org/wiki/Ayuda:Crear_im%C3%A1genes_con_VQGAN+CLIP). Also, if you're not inspired, here is [a very interesting list of combinaison of keyword](https://imgur.com/a/SnSIQRu).
-
-Please be carefull when choosing the model you're gonna use. Certain are suitable for commercial use (aka NFT), while others, like `imagenet`, are not.
-
-For a first try, I decided to use the following image as an **initial image**. It's a photo a friend's apartment:
-
- <div style={{textAlign:"center"}}>
-
-![Initial Image](/static/images/articles/deep-learning-art/initialImage.png)
-
-_My friend does have a cool apartment_
-
-</div>
-
-A first naïve try was to use the prompt `sketch` on the initial image, with the `sflckr` model.
-
- <div style={{textAlign:"center"}}>
-
-![sketch image](/static/images/articles/deep-learning-art/sketch.gif)
-
-_That did not went as planned_
-
-</div>
-The first try was a bit... Uncanny.  It did morph into what could be called a sketch. Unfortunately, the Initial image provided was (obviously) not suitable.
-
-With a bit of tweaking, and using `imagenet_16384`, with a combined prompt `"living room:60| voxel:30| 4K:10"` (meaning: do an image composed of 60% of a living room, 30% voxel and 10% of 4k).
-
- <div style={{textAlign:"center"}}>
-
-![sketch image](/static/images/articles/deep-learning-art/living_room_voxel.gif)
-
-_That went better_
-
-</div>
-<br/>
-
-Some artifacts are still able to be seen (especially around plants) but the result looks way better.
-
-## 3. To go further
-
-The previous shown image are for rendering statics images (like the sketched bernie). But in order to render something like the second gif, named Journey, we need to use a `Zooming VQGAN + Clip`. The main idea behind it is that you use a zoomed version of the last iteration for the next one, in order to have a _continious zoom_ effect.
-
-One added side benefit is that you can use time-stamped inputs. You can then do composition like this one:
-
-<div style={{textAlign:"center"}}>
-
-![Ascension](/static/images/articles/deep-learning-art/Ascension.gif)
-
-[Ascension](https://www.reddit.com/r/deepdream/comments/p0my2e/ascension_zoom_vqgancliprife/) by [u/ascendedhand](https://www.reddit.com/user/ascendedhand)
-
-</div>
-<br/>
-
-# Additional resources
-
-- [VQGAN+CLIP — How does it work?](https://alexasteinbruck.medium.com/vqgan-clip-how-does-it-work-210a5dca5e52)
-- [Introduction to VQGAN+CLIP](https://sourceful.us/doc/935/introduction-to-vqganclip)
-- [Combinaison of keyword](https://imgur.com/a/SnSIQRu) (Already linked in the article, but please, take a look !)
+## Using git
