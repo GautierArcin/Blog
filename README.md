@@ -63,6 +63,8 @@ To have localized version for post, please follow this naming convention:
 
 Post can be provided in only one locale (that doesn't need to be defaultLocale).
 
+The API routes used in the newsletter component cannot be used in a static site export. You will need to use a form API endpoint provider and substitute the route in the newsletter component accordingly. Other hosting platforms such as Netlify also offer alternative solutions - please refer to their docs for more information.
+
 ## Support
 
 Using the template? Support this effort by giving a star on Github, sharing your own blog and giving a shoutout on Twitter or be a project [sponsor](https://github.com/sponsors/timlrx).

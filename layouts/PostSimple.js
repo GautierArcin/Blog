@@ -7,6 +7,7 @@ import formatDate from '@/lib/utils/formatDate'
 import Comments from '@/components/comments'
 import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/router'
+import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 
 export default function PostLayout({
   frontMatter,
@@ -27,6 +28,7 @@ export default function PostLayout({
         url={`${siteMetadata.siteUrl}/blog/${frontMatter.slug}`}
         {...frontMatter}
       />
+      <ScrollTopAndComment />
       <article>
         <div>
           <header>
