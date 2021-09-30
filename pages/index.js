@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
@@ -32,12 +33,37 @@ export default function Home({ posts, locale, availableLocales }) {
             {t('home:greetings')}
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {t('home:subtitle1')} <br />
+            <Trans
+              i18nKey="home:subtitle1"
+              components={{
+                comp1: (
+                  <span class="font-extrabold text-primary-500 dark:text-primary-600 hover:text-primary-700 dark:hover:text-primary-300 stroke-15  ease-in-out duration-500" />
+                ),
+
+                comp2: (
+                  <span class="font-extrabold text-primary-500 dark:text-primary-600 hover:text-primary-700 dark:hover:text-primary-300 stroke-15  ease-in-out duration-500" />
+                ),
+                // comp2: (
+                //   <span class="font-extrabold  text-gray-500  hover:text-gray-600 dark:hover:text-gray-400 stroke-15  ease-in-out duration-500 " />
+                // ),
+              }}
+            />
+            <br />
             <Trans
               i18nKey="home:subtitle2"
               components={{
-                link1: <Link className="font-extrabold" href="/about" />,
-                link2: <Link className="font-extrabold" href="/projects" />,
+                link1: (
+                  <Link
+                    className="font-extrabold text-primary-500 dark:text-primary-600 hover:text-primary-700 dark:hover:text-primary-300 stroke-15  ease-in-out duration-500"
+                    href="/about"
+                  />
+                ),
+                link2: (
+                  <Link
+                    className="font-extrabold text-primary-500 dark:text-primary-600 hover:text-primary-700 dark:hover:text-primary-300 stroke-15  ease-in-out duration-500"
+                    href="/projects"
+                  />
+                ),
               }}
             />
           </p>
