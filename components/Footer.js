@@ -3,12 +3,23 @@ import siteMetadata from '@/data/siteMetadata'
 import SocialIcon from '@/components/social-icons'
 import { useRouter } from 'next/router'
 
+import useTranslation from 'next-translate/useTranslation'
+import NewsletterForm from '@/components/NewsletterForm'
+
 export default function Footer() {
   const { locale } = useRouter()
+  const { t } = useTranslation()
   return (
     <footer>
-      <div className="flex flex-col items-center mt-16">
-        <div className="flex mb-3 space-x-4">
+      <div className="flex flex-col items-center mt-20">
+        <div className="flex mb-4 space-x-4">
+          {siteMetadata.newsletter.provider !== '' && (
+            <div className="flex items-center justify-center pt-4">
+              <NewsletterForm title={t('newsletter:title')} />
+            </div>
+          )}
+        </div>
+        <div className="flex mb-4 space-x-4">
           <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size="6" />
           <SocialIcon kind="github" href={siteMetadata.github} size="6" />
           <SocialIcon kind="facebook" href={siteMetadata.facebook} size="6" />
