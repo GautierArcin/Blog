@@ -39,14 +39,8 @@ module.exports = {
           blue: '#93ddfd',
           white: '#fff',
         },
-        // test1: '#E0EAFC',
-        // test2: '#CFDEF3',
-        // bgBegin: '#06b6d4',
-        // begEnd: '#06b6d4',
         darkBgBegin: '#5F0A69',
         darkBgEnd: '#1C1917',
-        // darkBgBegin: '#06b6d4',
-        // darkBgEnd: '#06b6d4',
       },
       typography: (theme) => ({
         DEFAULT: {
