@@ -37,7 +37,7 @@ export default function Home({ posts, locale, availableLocales }) {
         getBeforeInit={(instance) => {
           instance
             .type(typeWriterText['para1'][locale])
-            .pause(4000)
+            .pause(3500)
             .delete(1)
             .pause(100)
             .delete(1)
