@@ -28,8 +28,8 @@ export default function Home({ posts, locale, availableLocales }) {
         availableLocales={availableLocales}
       />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="pt-6 pb-4 space-y-2 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+        <div className="pt-6 pb-4 ">
+          <h1 className="text-4xl font-extrabold leading-9 pb-4 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {t('home:greetings')}
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
@@ -37,18 +37,19 @@ export default function Home({ posts, locale, availableLocales }) {
               i18nKey="home:subtitle1"
               components={{
                 comp1: (
-                  <span class="font-extrabold text-primary-500 dark:text-primary-600 hover:text-primary-700 dark:hover:text-primary-300 stroke-15  ease-in-out duration-500" />
+                  <span className="font-extrabold text-primary-500 dark:text-primary-600 hover:text-primary-700 dark:hover:text-primary-300 stroke-15  ease-in-out duration-500" />
                 ),
 
                 comp2: (
-                  <span class="font-extrabold text-primary-500 dark:text-primary-600 hover:text-primary-700 dark:hover:text-primary-300 stroke-15  ease-in-out duration-500" />
+                  <span className="font-extrabold text-primary-500 dark:text-primary-600 hover:text-primary-700 dark:hover:text-primary-300 stroke-15  ease-in-out duration-500" />
                 ),
                 // comp2: (
                 //   <span class="font-extrabold  text-gray-500  hover:text-gray-600 dark:hover:text-gray-400 stroke-15  ease-in-out duration-500 " />
                 // ),
               }}
             />
-            <br />
+          </p>
+          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             <Trans
               i18nKey="home:subtitle2"
               components={{
