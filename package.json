@@ -39,6 +39,7 @@
     "sharp": "^0.28.3",
     "smoothscroll-polyfill": "^0.4.4",
     "tailwindcss": "^2.2.2",
+    "typeit-react": "^2.0.3",
     "unist-util-visit": "^4.0.0"
   },
   "devDependencies": {
