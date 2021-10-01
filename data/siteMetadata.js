@@ -10,7 +10,7 @@ const siteMetadata = {
     fr: 'Ingénieur FullStack & Robotique',
   },
   // description: 'A blog created with Next.js and Tailwind.css',
-  description: { en: '🚧 Blog under construction 🚧', fr: '🚧 Blog en construction 🚧' },
+  description: { en: "Gautier Arcin's personnal blog", fr: ' Le blog personnel de Gautier Arcin' },
   language: 'en',
   siteUrl: 'https://www.gautierarcin.com',
   siteRepo: 'https://github.com/GautierArcin/Blog',
