@@ -44,16 +44,16 @@ export default function Home({ posts, locale, availableLocales }) {
             .pause(100)
             .delete(null, { speed: 130 })
             .type(typeWriterText['para2'][locale])
-            .pause(500)
+            .pause(100)
             .type(' 🤖', { speed: 0 })
             .pause(3500)
             .delete(1)
-            .pause(100)
+            .pause(200)
             .delete(1)
             .pause(100)
             .delete(null, { speed: 130 })
             .type(typeWriterText['para3'][locale])
-            .pause(500)
+            .pause(200)
             .type(' 👨‍💻', { speed: 0 })
             .pause(3500)
             .delete(2, { speed: 0 })
@@ -81,7 +81,7 @@ export default function Home({ posts, locale, availableLocales }) {
         description={siteMetadata.description[locale]}
         availableLocales={availableLocales}
       />
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+      <div className="divide-y">
         <div className="pt-6 pb-4 ">
           <h1 className="text-4xl font-extrabold leading-9 pb-4 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {t('home:greetings')}
