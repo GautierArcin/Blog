@@ -8,7 +8,8 @@ import formatDate from '@/lib/utils/formatDate'
 import useTranslation from 'next-translate/useTranslation'
 import Trans from 'next-translate/Trans'
 import TypeIt from 'typeit-react'
-import { useMemo } from 'react'
+
+import styles from './index.module.css'
 
 const MAX_DISPLAY = 5
 
@@ -21,8 +22,6 @@ export async function getStaticProps({ locale, defaultLocale, locales }) {
 
 export default function Home({ posts, locale, availableLocales }) {
   const { t } = useTranslation()
-
-  console.log('locale : ' + locale)
   const typeWriterText = {
     para1: { fr: 'Gautier Arcin', en: 'Gautier Arcin' },
     para2: { fr: 'un ingénieur Robotique', en: 'a Robotics engineer' },
@@ -85,6 +84,9 @@ export default function Home({ posts, locale, availableLocales }) {
         <div className="pt-6 pb-4 ">
           <h1 className="text-4xl font-extrabold leading-9 pb-4 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {t('home:greetings')}
+            <span className={styles.wave} role="img" aria-label="waving had">
+              👋
+            </span>
           </h1>
           <div className="text-lg leading-7 sm:pt-0.5 sm:pb-0.5 pt-1 pb-5 text-gray-500 dark:text-gray-400">
             <span>{t('home:subtitle11')}</span>
