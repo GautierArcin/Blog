@@ -1,6 +1,6 @@
 .wave {
   animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
-  animation-duration: 3s; /* Change to speed up or slow down */
+  animation-duration: 5s; /* Change to speed up or slow down */
   animation-iteration-count: infinite; /* Never stop waving :) */
   transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
   display: inline-block;
@@ -10,22 +10,22 @@
   0% {
     transform: rotate(0deg);
   }
-  10% {
+  5% {
     transform: rotate(7deg);
   } /* The following five values can be played with to make the waving more or less extreme */
-  20% {
+  10% {
     transform: rotate(-4deg);
   }
-  30% {
+  15% {
     transform: rotate(7deg);
   }
-  40% {
+  20% {
     transform: rotate(-2deg);
   }
-  50% {
+  25% {
     transform: rotate(5deg);
   }
-  60% {
+  30% {
     transform: rotate(0deg);
   } /* Reset for the last half to pause */
   100% {
