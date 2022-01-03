@@ -23,6 +23,8 @@ const LayoutWrapper = ({ children }) => {
     router.asPath.includes('/tags')
       ? router.push('/tags/', '/tags/', { locale })
       : router.push(router.asPath, router.asPath, { locale })
+
+    console.log(locale)
   }
 
   return (
