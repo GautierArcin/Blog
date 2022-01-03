@@ -11,18 +11,20 @@ import ThemeSwitch from './ThemeSwitch'
 
 import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 const LayoutWrapper = ({ children }) => {
   const { t } = useTranslation()
   const router = useRouter()
+
   const { locale, locales, defaultLocale } = router
 
   const changeLanguage = (e) => {
     const locale = e.target.value
 
     router.asPath.includes('/tags')
-      ? router.push('/tags/', '/tags/', { locale })
-      : router.push(router.asPath, router.asPath, { locale })
+      ? router.replace('/tags/', '/tags/', { locale })
+      : router.replace(router.asPath, router.asPath, { locale })
 
     console.log(locale)
   }
