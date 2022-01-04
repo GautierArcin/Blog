@@ -22,9 +22,9 @@ const LayoutWrapper = ({ children }) => {
   const [lang, setLang] = useState(locale)
 
   const changeLanguage = (e) => {
-    console.log('changing !!')
-    console.log(e)
-    console.log(e.target.value)
+    // console.log('changing !!')
+    // console.log(e)
+    // console.log(e.target.value)
     setLang(e.target.value)
   }
 
@@ -84,7 +84,6 @@ const LayoutWrapper = ({ children }) => {
               {locales.map((e) => (
                 <option
                   className="text-gray-900 dark:text-gray-100 dark:bg-gray-900 bg-gray-100"
-                  // classsvalue={e}
                   value={e}
                   key={e}
                 >
