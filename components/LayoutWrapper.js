@@ -22,6 +22,9 @@ const LayoutWrapper = ({ children }) => {
   const [lang, setLang] = useState(locale)
 
   const changeLanguage = (e) => {
+    console.log('changing !!')
+    console.log(e)
+    console.log(e.target.value)
     setLang(e.target.value)
   }
 
