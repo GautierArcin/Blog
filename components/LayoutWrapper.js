@@ -26,6 +26,7 @@ const LayoutWrapper = ({ children }) => {
   }
 
   useEffect(() => {
+    console.log('routing to : ', lang)
     router.asPath.includes('/tags')
       ? router.push('/tags/', '/tags/', { locale: lang })
       : router.push(router.asPath, router.asPath, { locale: lang })
