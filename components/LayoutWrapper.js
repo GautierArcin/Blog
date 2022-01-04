@@ -11,23 +11,26 @@ import ThemeSwitch from './ThemeSwitch'
 
 import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 const LayoutWrapper = ({ children }) => {
   const { t } = useTranslation()
+
   const router = useRouter()
 
   const { locale, locales, defaultLocale } = router
+  const [lang, setLang] = useState(locale)
 
   const changeLanguage = (e) => {
-    const locale = e.target.value
-
-    router.asPath.includes('/tags')
-      ? router.replace('/tags/', '/tags/', { locale })
-      : router.replace(router.asPath, router.asPath, { locale })
-
-    console.log(locale)
+    setLang(e.target.value)
   }
+
+  useEffect(() => {
+    router.asPath.includes('/tags')
+      ? router.push('/tags/', '/tags/', { locale: lang })
+      : router.push(router.asPath, router.asPath, { locale: lang })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lang])
 
   return (
     <SectionContainer>
