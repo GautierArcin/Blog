@@ -1,7 +1,7 @@
 const siteMetadata = {
   title: {
-    en: "Gautier Arcin's Blog | Robotics & Fullstack engineer",
-    fr: 'Blog de Gautier Arcin | Ingénieur FullStack & Robotique',
+    en: "Gautier Arcin's Blog | Fullstack engineer",
+    fr: 'Blog de Gautier Arcin | Ingénieur Full Stack,
   },
   author: 'Gautier Arcin',
   headerTitle: { en: "Gautier Arcin's Blog", fr: 'Blog de Gautier Arcin' },
