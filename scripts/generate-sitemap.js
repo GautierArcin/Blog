@@ -1,6 +1,5 @@
 const fs = require('fs')
 const globby = require('globby')
-const path = require('path')
 const prettier = require('prettier')
 const siteMetadata = require('../data/siteMetadata')
 const i18nConfig = require('../i18n.json')
@@ -9,10 +8,12 @@ const i18nConfig = require('../i18n.json')
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
   const pages = await globby([
     'pages/*.js',
+    'pages/*.tsx',
     'data/blog/**/*.mdx',
     'data/blog/**/*.md',
     'public/tags/**/*.xml',
     '!pages/_*.js',
+    '!pages/_*.tsx',
     '!pages/api',
   ])
 
@@ -56,7 +57,7 @@ const i18nConfig = require('../i18n.json')
   if (siteMetadata.siteUrl[siteMetadata.siteUrl.length - 1] == '/') {
     console.error("/!\\: siteUrl in siteMetadata has an '/' at the end. Please remove it.")
   }
-  const siteUrl = siteMetadata
+  const siteUrl = siteMetadata.siteUrl
 
   const sitemap = `
   <?xml version="1.0" encoding="UTF-8"?>

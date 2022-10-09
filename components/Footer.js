@@ -5,21 +5,22 @@ import { useRouter } from 'next/router'
 
 import useTranslation from 'next-translate/useTranslation'
 import NewsletterForm from '@/components/NewsletterForm'
+// import TypeIt from 'typeit-react'
 
 export default function Footer() {
   const { locale } = useRouter()
   const { t } = useTranslation()
   return (
     <footer>
-      <div className="flex flex-col items-center mt-20">
-        <div className="flex mb-4 space-x-4">
+      <div className="mt-20 flex flex-col items-center">
+        <div className="mb-4 flex space-x-4">
           {siteMetadata.newsletter.provider !== '' && (
             <div className="flex items-center justify-center pt-4">
               <NewsletterForm title={t('newsletter:title')} />
             </div>
           )}
         </div>
-        <div className="flex mb-4 space-x-4">
+        <div className="mb-4 flex space-x-4">
           <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size="6" />
           <SocialIcon kind="github" href={siteMetadata.github} size="6" />
           <SocialIcon kind="facebook" href={siteMetadata.facebook} size="6" />
@@ -27,7 +28,7 @@ export default function Footer() {
           <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size="6" />
           <SocialIcon kind="twitter" href={siteMetadata.twitter} size="6" />
         </div>
-        <div className="flex mb-2 space-x-2 text-sm text-gray-500 dark:text-gray-400">
+        <div className="mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
           <div className="whitespace-nowrap">{siteMetadata.author}</div>
           <div>{` • `}</div>
           <div className="whitespace-nowrap">{`© ${new Date().getFullYear()}`}</div>
@@ -41,6 +42,7 @@ export default function Footer() {
           <Link href="https://github.com/timlrx/tailwind-nextjs-starter-blog">
             Tailwind Nextjs Theme
           </Link>
+          {/* <TypeIt>This will be typed in a `span` element!</TypeIt> */}
         </div>
       </div>
     </footer>

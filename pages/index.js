@@ -7,7 +7,6 @@ import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import useTranslation from 'next-translate/useTranslation'
 import Trans from 'next-translate/Trans'
-import TypeIt from 'typeit-react'
 
 import styles from './index.module.css'
 
@@ -29,10 +28,10 @@ export default function Home({ posts, locale, availableLocales }) {
   }
   const typeWriterComponent = (
     <div className="inline-block">
-      <TypeIt
+      {/* <TypeIt
         id="typeWriter"
         key={locale}
-        className="inline-block font-extrabold text-primary-500 dark:text-primary-600 hover:text-primary-700 dark:hover:text-primary-300 stroke-15  ease-in-out duration-500"
+        className="stroke-15 inline-block font-extrabold text-primary-500 duration-500 ease-in-out hover:text-primary-700  dark:text-primary-600 dark:hover:text-primary-300"
         getBeforeInit={(instance) => {
           instance
             .type(typeWriterText['para1'][locale])
@@ -68,11 +67,10 @@ export default function Home({ posts, locale, availableLocales }) {
           loop: true,
           speed: 60,
         }}
-      />
+      /> */}
     </div>
   )
 
-  // const typeWriterComponent = <TypeIt id="typeWriter">test</TypeIt>
   return (
     <>
       <PageSEO
@@ -82,15 +80,17 @@ export default function Home({ posts, locale, availableLocales }) {
       />
       <div className="divide-y">
         <div className="pt-6 pb-4 ">
-          <h1 className="text-4xl font-extrabold leading-9 pb-4 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          {/* <TypeIt>This will be typed in a `span` element!</TypeIt> */}
+          <h1 className="pb-4 text-4xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {t('home:greetings')}
             <span className={styles.wave} role="img" aria-label="waving had">
               👋
             </span>
           </h1>
-          <div className="text-lg leading-7 sm:pt-0.5 sm:pb-0.5 pt-1 pb-5 text-gray-500 dark:text-gray-400">
+          <div className="pt-1 pb-5 text-lg leading-7 text-gray-500 dark:text-gray-400 sm:pt-0.5 sm:pb-0.5">
             <span>{t('home:subtitle11')}</span>
-            {typeWriterComponent}
+            {/* <TypeIt>Hello</TypeIt> */}
+
             <span>{t('home:subtitle12')}</span>
           </div>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
@@ -99,13 +99,13 @@ export default function Home({ posts, locale, availableLocales }) {
               components={{
                 link1: (
                   <Link
-                    className="font-extrabold text-primary-500 dark:text-primary-600 hover:text-primary-700 dark:hover:text-primary-300 stroke-15  ease-in-out duration-500"
+                    className="stroke-15 font-extrabold text-primary-500 duration-500 ease-in-out hover:text-primary-700  dark:text-primary-600 dark:hover:text-primary-300"
                     href="/about"
                   />
                 ),
                 link2: (
                   <Link
-                    className="font-extrabold text-primary-500 dark:text-primary-600 hover:text-primary-700 dark:hover:text-primary-300 stroke-15  ease-in-out duration-500"
+                    className="stroke-15 font-extrabold text-primary-500 duration-500 ease-in-out hover:text-primary-700  dark:text-primary-600 dark:hover:text-primary-300"
                     href="/projects"
                   />
                 ),
@@ -120,7 +120,7 @@ export default function Home({ posts, locale, availableLocales }) {
             return (
               <li key={slug} className="py-12">
                 <article>
-                  <div className="space-y-2 xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline">
+                  <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                     <dl>
                       <dt className="sr-only">{t('common:pub')}</dt>
                       <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
@@ -144,7 +144,7 @@ export default function Home({ posts, locale, availableLocales }) {
                             ))}
                           </div>
                         </div>
-                        <div className="prose text-gray-500 max-w-none dark:text-gray-400">
+                        <div className="prose max-w-none text-gray-500 dark:text-gray-400">
                           {summary}
                         </div>
                       </div>

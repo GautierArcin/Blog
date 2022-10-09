@@ -35,7 +35,7 @@ export default function Projects({ locale, availableLocales }) {
         availableLocales={availableLocales}
       />
       <div className="divide-y">
-        <div className="pt-6 pb-4 space-y-2 md:space-y-5">
+        <div className="space-y-2 pt-6 pb-4 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {t('projects:title')}
           </h1>
@@ -43,13 +43,13 @@ export default function Projects({ locale, availableLocales }) {
             {t('projects:subtitle')}
           </p>
           {/* <div className="space-x-4 > * + *"> */}
-          <div className="flex flex-wrap justify-start -my-1 -mx-3">
+          <div className="-my-1 -mx-3 flex flex-wrap justify-start">
             {listeFilter.map((e) => (
               <button
                 key={e}
                 className={`${
-                  filter === e ? 'ring-2 dark:ring-2 ring-gray-900 dark:ring-white' : ''
-                } bg-primary-500 my-1 mx-3 hover:bg-primary-600  dark:hover:bg-primary-400 text-white font-bold py-2 px-4 rounded`}
+                  filter === e ? 'ring-2 ring-gray-900 dark:ring-2 dark:ring-white' : ''
+                } my-1 mx-3 rounded bg-primary-500  py-2 px-4 font-bold text-white hover:bg-primary-600 dark:hover:bg-primary-400`}
                 name={e}
                 onClick={() => setFilter(filter === e ? '' : e)}
               >
@@ -59,7 +59,7 @@ export default function Projects({ locale, availableLocales }) {
           </div>
         </div>
         <div className="container py-6">
-          <div className="flex flex-wrap -m-4">
+          <div className="-m-4 flex flex-wrap">
             {projectsData[locale]
               ?.filter((e) => e.category.includes(filter))
               .map((d, i) => (
